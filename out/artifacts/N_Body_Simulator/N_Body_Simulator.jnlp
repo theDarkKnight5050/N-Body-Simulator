@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="N_Body_Simulator.jnlp">
+  <information>
+    <title>N-Body SImulator</title>
+    <vendor>Ahmed Abdalla</vendor>
+    <description>Simple physics engine</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="N_Body_Simulator.jar" size="87042" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="600" height="400" main-class="Main"  name="N-Body Simulator" />
+  <update check="background"/>
+</jnlp>

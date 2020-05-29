@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="N-Body Simulator">
+    <output-path>$PROJECT_DIR$/out/artifacts/N_Body_Simulator</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="Simple physics engine" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="title" value="N-Body SImulator" />
+        <option name="vendor" value="Ahmed Abdalla" />
+        <option name="version" value="1.0" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="N_Body_Simulator.jar">
+        <element id="module-output" name="N-Body Simulator" />
+      </element>
+    </root>
+  </artifact>
+</component>

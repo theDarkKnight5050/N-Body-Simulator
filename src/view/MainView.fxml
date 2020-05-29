@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="400" maxWidth="600" minHeight="400" minWidth="600" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
+   <right>
+      <VBox prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <children>
+            <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+               <items>
+                  <Button fx:id="particleButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#loadParticle">
+                     <graphic>
+                        <ImageView id="particleButton" fitHeight="90.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="imgs/particle.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <ToggleButton fx:id="fieldButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false">
+                     <graphic>
+                        <ImageView fitHeight="90.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="imgs/field.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </ToggleButton>
+               </items>
+            </SplitPane>
+            <TextField fx:id="massLabel" promptText="Mass" />
+            <TextField fx:id="chargeLabel" promptText="Charge" />
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="3.0" layoutY="6.0" text="X Veloc." />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Slider layoutY="9.0" majorTickUnit="2.5" max="5.0" min="-5.0" minorTickCount="1" prefHeight="17.0" prefWidth="107.0" showTickMarks="true" fx:id="xVelSlider" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="4.0" layoutY="6.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Y Veloc." />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Slider fx:id="yVelSlider" layoutY="9.0" majorTickUnit="2.5" max="5.0" min="-5.0" minorTickCount="1" prefHeight="16.0" prefWidth="107.0" showTickMarks="true" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="15.0" layoutY="5.0" text="G" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="29.0" prefWidth="106.0">
+                     <children>
+                        <Slider fx:id="gSlider" blockIncrement="1.0" layoutX="-1.0" layoutY="9.0" majorTickUnit="2.5" max="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minorTickCount="1" onMouseReleased="#gSliderChange" prefHeight="21.0" prefWidth="108.0" showTickMarks="true" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="17.0" layoutY="6.0" text="k" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Slider fx:id="kSlider" blockIncrement="1.0" layoutY="9.0" majorTickUnit="2.5" max="10.0" minorTickCount="1" onMouseReleased="#kSliderChange" prefHeight="21.0" prefWidth="107.0" showTickMarks="true" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+        </children>
+      </VBox>
+   </right>
+   <bottom>
+      <TabPane prefHeight="146.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+        <tabs>
+            <Tab text="Animate">
+               <content>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="toggleButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#toggleAnimation" HBox.hgrow="ALWAYS">
+                             <graphic>
+                                 <ImageView id="particleButton" fitHeight="90.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                     <image>
+                                         <Image url="imgs/playButton.png" />
+                                     </image>
+                                 </ImageView>
+                             </graphic>
+                        </Button>
+                        <Button fx:id="clearButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clearAnimation" HBox.hgrow="ALWAYS">
+                           <graphic>
+                              <ImageView fitHeight="90.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="imgs/clearButton.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic></Button>
+                     </children>
+                  </HBox>
+               </content>
+            </Tab>
+          <Tab text="Program Output">
+               <content>
+                  <TextArea fx:id="log" prefHeight="200.0" prefWidth="200.0" />
+               </content>
+          </Tab>
+          <Tab text="Instructions">
+               <content>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" text="Welcome to my N-Body Simulator! The controls are simple:&#10;1. Enter in values for a particles mass, charge and velocity&#10;2. Set default constants for gravitational (G) and coulombic forces (K)&#10;3. Click once on the particle button and again on the playground to insert the particle in a specific location.&#10;4. Hit the field button to view field lines.&#10;5. Fill the playground with particles.&#10;6. Press play to watch your particles interact!&#10;&#10;Pro Tips:&#10;1. For some cool effects place particles into the playground while the animation is going.&#10;2. The CL button on the animate tab will clear the playground for you.&#10;3. Check the &quot;Program Output&quot; tab for error messages and updates.&#10;&#10;Physics Note:&#10;Technically gravitational and electric interactions don't follow Newton's Law of Gravitation and Coulomb's &#10;Law at high speeds. However, implementing the correct physics for this situation requires relativity which &#10;proved slightly demanding for my timescale. It's also important to note that, in the real world, gravitational &#10;interactions are many times weaker than electromagnetic ones (that's why we only really talk about gravity &#10;over large distances, ie: planets). For pedagogic purposes I've chosen to keep their scales similar. These &#10;constitute the known unknowns but there are undoubtedly other reasons why this model won't perfectly &#10;replicate our world. If you are to stumble upon those, I humbly ask you to excuse the shortcomings of this &#10;lowly physics enthusiast! &#10;" />
+               </content>
+          </Tab>
+            <Tab text="Credits">
+               <content>
+                  <TextArea prefHeight="200.0" prefWidth="200.0" text="Created by: Ahmed Abdalla&#10;Teacher: Jerry Cain&#10;Submitted: 5:00 AM 3/21/2019&#10;&#10;Contact me with questions and suggestions at aabdallaa@stanford.edu" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </bottom>
+   <left>
+      <Pane id="playground" fx:id="playground" onMouseClicked="#placeParticle" prefHeight="262.0" prefWidth="440.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
